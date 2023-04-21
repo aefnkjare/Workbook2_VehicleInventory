@@ -10,8 +10,9 @@ public class Main {
         Vehicle[] vehicles = new Vehicle[20];
 
         vehicles[0] = new Vehicle(918273, " Honda Accord", "periwinkle", 209_881, 2_500);
-
+        //
         vehicles[1] = new Vehicle(918273, "Nissan Murano", "red", 120_888, 2_199);
+        // 2: Id:918273, Make/Model: Nissan Murano, Color: Red, Odometer Reading: 120888, Price: 2199
         vehicles[2] = new Vehicle(918273, "Honda Odyssey", "blue", 319_976, 2_500);
         vehicles[3] = new Vehicle(918273, "Mercedes Benz", "black", 79_687, 2_500);
         vehicles[4] = new Vehicle(918273, "Ford Focus", "white", 179_900, 2_500);
@@ -22,7 +23,7 @@ public class Main {
         int commandInput;
 
         do {
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             System.out.println("What do you want to do?\n" +
                     "\t1 - Find vehicles that match make/model\n" +
                     "\t2 - Find vehicles that fall within a price range\n" +
@@ -46,6 +47,19 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("List all vehivles");
+                    for(int i=0; i<vehicles.length;i++){
+                        if(vehicles[i] == null){
+                            break;
+                        }
+                        System.out.printf("%d: Id: %d, Make/Model: %s, Color: %s, Odometer Reading: %d, Price: %f\n",
+                                i+1,
+                                vehicles[i].getVehicleId(),
+                                vehicles[i].getMakeModel(),
+                                vehicles[i].getColor(),
+                                vehicles[i].getOdometerReading(),
+                                vehicles[i].getPrice()
+                        );
+                    }
                     break;
                 case 5:
                     System.out.println("Add a vehicle");
