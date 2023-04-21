@@ -3,9 +3,9 @@ package com.iv;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        Scanner commandInput = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         Vehicle[] vehicles = new Vehicle[20];
 
@@ -19,8 +19,10 @@ public class Main {
 
         int totalNumOfVehicles = vehicles.length;
 
-        int userInput;
+        int commandInput;
+
         do {
+            Thread.sleep(1000);
             System.out.println("What do you want to do?\n" +
                     "\t1 - Find vehicles that match make/model\n" +
                     "\t2 - Find vehicles that fall within a price range\n" +
@@ -30,9 +32,9 @@ public class Main {
                     "\t6 - Quit\n" +
                     "Enter your command:\n"
             );
-            userInput = commandInput.nextInt();
+            commandInput = scanner.nextInt();
 
-            switch(userInput){
+            switch(commandInput){
                 case 1:
                     System.out.println("Find vehicle by make/model");
                     break;
@@ -54,10 +56,9 @@ public class Main {
                 default:
                     System.out.println("Command Not Found You Bozo.");
             }
-        } while();
-        }
+        } while(commandInput != 6);
     }
-//}
+}
     class Vehicle{
         // Properties
         private long vehicleId;
