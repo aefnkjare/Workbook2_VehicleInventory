@@ -1,18 +1,63 @@
 package com.iv;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Vehicle isaiahsAccord = new Vehicle(
-                918273,
-                "Accord",
-                "periwinkle",
-                209_881,
-                2_500
-        );
 
-        System.out.println(isaiahsAccord.getMakeModel());
+        Scanner commandInput = new Scanner(System.in);
+
+        Vehicle[] vehicles = new Vehicle[20];
+
+        vehicles[0] = new Vehicle(918273, " Honda Accord", "periwinkle", 209_881, 2_500);
+
+        vehicles[1] = new Vehicle(918273, "Nissan Murano", "red", 120_888, 2_199);
+        vehicles[2] = new Vehicle(918273, "Honda Odyssey", "blue", 319_976, 2_500);
+        vehicles[3] = new Vehicle(918273, "Mercedes Benz", "black", 79_687, 2_500);
+        vehicles[4] = new Vehicle(918273, "Ford Focus", "white", 179_900, 2_500);
+        vehicles[5] = new Vehicle(918273, "Tesla Type S", "yellow", 100_900, 2_500);
+
+        int totalNumOfVehicles = vehicles.length;
+
+        int userInput;
+        do {
+            System.out.println("What do you want to do?\n" +
+                    "\t1 - Find vehicles that match make/model\n" +
+                    "\t2 - Find vehicles that fall within a price range\n" +
+                    "\t3 - Find vehicles that match a color\n" +
+                    "\t4 - List all vehicles\n" +
+                    "\t5 - Add a vehicle\n" +
+                    "\t6 - Quit\n" +
+                    "Enter your command:\n"
+            );
+            userInput = commandInput.nextInt();
+
+            switch(userInput){
+                case 1:
+                    System.out.println("Find vehicle by make/model");
+                    break;
+                case 2:
+                    System.out.println("Find vehicle by price");
+                    break;
+                case 3:
+                    System.out.println("Find vehicle by color");
+                    break;
+                case 4:
+                    System.out.println("List all vehivles");
+                    break;
+                case 5:
+                    System.out.println("Add a vehicle");
+                    break;
+                case 6:
+                    System.out.println("Quitting");
+                    break; //Quitting
+                default:
+                    System.out.println("Command Not Found You Bozo.");
+            }
+        } while();
+        }
     }
-}
+//}
     class Vehicle{
         // Properties
         private long vehicleId;
